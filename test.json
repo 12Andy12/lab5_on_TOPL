@@ -1,0 +1,25 @@
+{
+  "states": ["q0", "q1", "q2", "q3", "q4", "q5", "qf"],
+  "alphabet": ["a", "b", "c", "#"],
+  "in_stack": ["a","c", "Z"],
+  "alphabet_y": ["0", "1"],
+  "rules": [
+    ["q0", "a", "Z", "q1", "aZ", "EPS"],
+    ["q1", "a", "a", "q1", "aa", "EPS"],
+    ["q1", "c", "a", "q2", "ca", "0"],
+    ["q2", "c", "c", "q3", "c", "00"],
+    ["q3", "EPS", "c", "q3", "EPS", "EPS"],
+    ["q3", "EPS", "a", "q3", "EPS", "1"],
+    ["q3", "EPS", "Z", "qf", "EPS", "EPS"],
+    ["q3", "b", "c", "q4", "EPS", "EPS"],
+    ["q4", "b", "c", "q4", "EPS", "EPS"],
+    ["q4", "EPS", "c", "q3", "EPS", "EPS"],
+    ["q3", "c", "c", "q5", "cc", "00"],
+    ["q5", "c", "c", "q5", "cc", "00"],
+    ["q5", "b", "c", "q4", "EPS", "EPS"]
+  ],
+  "start": "q0",
+  "start_stack": "Z",
+  "start_y": "",
+  "end": ["qf"]
+}
